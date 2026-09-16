@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "name": "AI Agent Orchestration",
+      "owner": "Mona",
+      "status": "In Progress",
+      "recentActivity": "Updated agent team specs and docs",
+      "priority": "High"
+    },
+    {
+      "name": "Project Pulse Dashboard",
+      "owner": "Minsun",
+      "status": "Building",
+      "recentActivity": "Created initial frontend and launch config",
+      "priority": "High"
+    },
+    {
+      "name": "Workflow Automation",
+      "owner": "GitHub Bot",
+      "status": "Completed",
+      "recentActivity": "Validated Step 2 implementation plan",
+      "priority": "Medium"
+    }
+  ]
+}

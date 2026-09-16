@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Pulse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Project Pulse</h1>
+    <div id="projects-container" class="project-grid"></div>
+  </div>
+
+  <script>
+    fetch('project-data.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('projects-container');
+        data.projects.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <h2>${project.name}</h2>
+            <span class="badge">${project.status}</span>
+            <p class="meta-info"><strong>Owner:</strong> ${project.owner}</p>
+            <p class="meta-info"><strong>Recent Activity:</strong> ${project.recentActivity}</p>
+            <p class="meta-info"><strong>Priority:</strong> ${project.priority}</p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => console.error('Error loading project data:', err));
+  </script>
+</body>
+</html>
